@@ -13,7 +13,7 @@ pipeline {
 
         stage('Build docker'){
             steps{
-                sh 'docker build -t javatech .'
+                sh 'docker build -t demo1-0.0.1-SNAPSHOT .'
             }
         }
     }
