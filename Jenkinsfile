@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools{
-        maven 'maven_3.5'
+        maven 'maven:3.6'
     }
     stages{
         stage('Build Maven'){
@@ -14,7 +14,8 @@ pipeline {
 
         stage('Build docker'){
             steps{
-                sh 'docker build -t docker_ci_cd .'
+                def customImage = docker.build("CICD_SP:${env.BUILD_ID}")
+
             }
         }
     }
