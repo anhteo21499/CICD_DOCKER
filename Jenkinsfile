@@ -4,14 +4,6 @@ pipeline {
         maven 'maven:3.6'
     }
     stages{
-
-        stage('Initialize'){
-
-                def dockerHome = tool 'myDocker'
-                env.PATH = "${dockerHome}/bin:${env.PATH}"
-
-        }
-
         stage('Build Maven'){
             steps{
                 git branch: 'main', credentialsId: 'TEST_CICD', url: 'https://github.com/anhteo21499/CICD_DOCKER.git'
