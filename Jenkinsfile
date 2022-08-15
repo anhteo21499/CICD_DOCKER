@@ -10,5 +10,12 @@ pipeline {
                 sh "mvn clean install"
             }
         }
+
+        stage('Build docker'){
+            steps{
+                def customImage = docker.build("my-image:${env.BUILD_ID}")
+
+            }
+        }
     }
 }
