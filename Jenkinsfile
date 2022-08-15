@@ -13,8 +13,7 @@ pipeline {
 
         stage('Build docker'){
             steps{
-                def customImage = docker.build("CICD_SP:${env.BUILD_ID}")
-
+                sh 'docker build -t javatech .'
             }
         }
     }
