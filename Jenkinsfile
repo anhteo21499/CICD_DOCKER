@@ -13,7 +13,7 @@ pipeline {
 
         stage('Build docker'){
             steps{
-                def customImage = docker.build("my-image:${env.BUILD_ID}")
+                def customImage = docker.build("CICD_SP:${env.BUILD_ID}")
 
             }
         }
