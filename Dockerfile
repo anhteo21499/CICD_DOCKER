@@ -17,4 +17,4 @@ ENV PORT 8088
 EXPOSE $PORT
 ADD target/demo1-0.0.1-SNAPSHOT.jar demo1-0.0.1-SNAPSHOT.jar
 
-ENTRYPOINT ["java","-jar","-Xmx1024M","-Dserver.port=${PORT}","demo1-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","-Xmx1024M","-Dserver.port=${PORT}","/demo1-0.0.1-SNAPSHOT.jar"]
