@@ -14,7 +14,7 @@ pipeline {
 
     stage('pull git'){
         agent{
-            docker { image 'node:16.13.1-alpine' }
+            docker { image 'nopenjdk:11.0.16' }
         }
         steps{
             git branch: 'main', credentialsId: 'TEST_CICD', url: 'https://github.com/anhteo21499/CICD_DOCKER.git'
